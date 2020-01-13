@@ -50,6 +50,7 @@ PRODUCT_SHIPPING_API_LEVEL := 27
 
 # Power
 TARGET_HAS_NO_WLAN_STATS := true
+
 # inherit from the proprietary version
 # -include vendor/motorola/ali/BoardConfigVendor.mk
 
@@ -62,8 +63,8 @@ BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_qcwcn
 BOARD_WLAN_DEVICE := qcwcn
 BOARD_WPA_SUPPLICANT_DRIVER := NL80211
 BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_qcwcn
-WIFI_DRIVER_FW_PATH_AP := "ap"
-WIFI_DRIVER_FW_PATH_STA := "sta"
+#WIFI_DRIVER_FW_PATH_AP := "ap"
+#WIFI_DRIVER_FW_PATH_STA := "sta"
 WIFI_DRIVER_MODULE_NAME := "wlan"
-WIFI_DRIVER_MODULE_PATH := "/system/lib/modules/wlan.ko"
+WIFI_DRIVER_MODULE_PATH := "/vendor/lib/modules/wlan.ko"
 WPA_SUPPLICANT_VERSION := VER_0_8_X
