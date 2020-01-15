@@ -137,10 +137,12 @@ PRODUCT_PACKAGES += \
     android.hardware.secure_element@1.0 \
     android.hardware.usb@1.0
 
-# Keymaster HAL
-    #android.hardware.keymaster@3.0-service
+#Keymaster HAL
+#    android.hardware.keymaster@3.0-service
+
 #PRODUCT_PACKAGES += \
-#    android.hardware.keymaster@3.0-impl
+#    android.hardware.keymaster@3.0-impl \
+#    android.hardware.keymaster@3.0-service
 
 # NFC
 PRODUCT_PACKAGES += \
