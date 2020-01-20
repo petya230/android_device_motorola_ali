@@ -1,18 +1,30 @@
-# Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
-
-# Inherit some common Lineage stuff
+# Inherit some common Lineage stuff.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_base.mk)
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
-# Inherit from ali device
-$(call inherit-product, $(LOCAL_PATH)/device.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
-PRODUCT_BRAND := motorola
+# Device
+$(call inherit-product, device/motorola/ali/device.mk)
+
+TARGET_RECOVERY_FSTAB := device/motorola/ali/rootdir/etc/fstab.qcom
+
+# Device identifiers
 PRODUCT_DEVICE := ali
-PRODUCT_MANUFACTURER := motorola
 PRODUCT_NAME := lineage_ali
-PRODUCT_MODEL := moto g(6)
+PRODUCT_BRAND := motorola
+PRODUCT_MODEL := Moto g(6)
+PRODUCT_MANUFACTURER := Motorola
+PRODUCT_RELEASE_NAME := ali
+
+PRODUCT_BUILD_PROP_OVERRIDES += \
+        PRODUCT_NAME=ali
+
+# Boot animation
+TARGET_SCREEN_WIDTH := 1080
+TARGET_SCREEN_HEIGHT := 1920
+
 
 PRODUCT_GMS_CLIENTID_BASE := android-motorola
 TARGET_VENDOR := motorola
@@ -21,3 +33,6 @@ PRODUCT_BUILD_PROP_OVERRIDES += PRIVATE_BUILD_DESC=" 9 PPSS29.118-15-11-2 76e712
 
 # Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
 BUILD_FINGERPRINT := 9/PPSS29.118-15-11-2/76e712:user/release-keys
+
+PRODUCT_PACKAGES += \
+    libmemalloc

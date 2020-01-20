@@ -1,2 +1,4 @@
-require version-baseband=2.3.C14-00029
-require version-vendor=1569891795
+#require version-baseband=2.3.C14-00029
+#require version-vendor=1569891795
+require version-bootloader=0xC307|0xC308|0xC309|0xC30B
+
